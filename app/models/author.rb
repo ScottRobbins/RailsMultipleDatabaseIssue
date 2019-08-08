@@ -1,0 +1,2 @@
+class Author < SecondaryBase
+end
