@@ -1,3 +1,3 @@
-class Song < PrimaryBase
+class Song < ApplicationRecord
   belongs_to :artist
 end

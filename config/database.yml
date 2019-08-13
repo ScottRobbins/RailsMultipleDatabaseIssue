@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 
-primary: &primary
+default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -14,7 +14,7 @@ primary: &primary
   password: 
   socket: /tmp/mysql.sock
 
-secondary: &secondary
+secondary_default: &secondary_default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -26,10 +26,10 @@ secondary: &secondary
 
 development:
   primary:
-    <<: *primary
+    <<: *default
     database: development_primary
   secondary:
-    <<: *secondary
+    <<: *secondary_default
     database: development_secondary
 
 # Warning: The database defined as "test" will be erased and
@@ -37,8 +37,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   primary:
-    <<: *primary
+    <<: *default
     database: test_primary
   secondary:
-    <<: *secondary
+    <<: *secondary_default
     database: test_secondary

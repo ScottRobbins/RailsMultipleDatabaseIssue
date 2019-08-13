@@ -3,6 +3,6 @@
 class SecondaryBase < ApplicationRecord
   self.abstract_class = true
 
-  connects_to database: { reading: :primary, writing: :primary }
+  connects_to database: { writing: :primary }
 end
 
