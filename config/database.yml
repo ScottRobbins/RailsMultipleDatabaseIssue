@@ -11,7 +11,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: root
-  password: ***REMOVED***
+  password:
   socket: /tmp/mysql.sock
 
 secondary_default: &secondary_default
@@ -20,7 +20,7 @@ secondary_default: &secondary_default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: root
-  password: ***REMOVED***
+  password:
   socket: /tmp/mysql.sock
   migrations_paths: db/secondary_migrate
 
