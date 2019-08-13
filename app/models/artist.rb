@@ -1,2 +1,2 @@
-class Artist < ApplicationRecord
+class Artist < PrimaryBase
 end
